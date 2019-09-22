@@ -2,6 +2,8 @@ package th.ku.bookstore;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import th.ku.bookstore.BookDao;
+import th.ku.bookstore.Book;
 
 import java.util.List;
 
@@ -15,8 +17,8 @@ public class Main {
         bookDao.save(newBook);
 
         // ---- select book ----
-        Book spring = bookDao.fineById(4);
-        System.out.println("---getOne: " + spring);
+        Book spring = bookDao.findById(4);
+        System.out.println("---findById: " + spring);
 
         List<Book> bookList = bookDao.findAll();
         for (Book book : bookList) {
@@ -27,8 +29,8 @@ public class Main {
         newBook.setPrice(600);
         bookDao.update(4, newBook);
 
-        spring = bookDao.fineById(4);
-        System.out.println("---fineById: " + spring);
+        spring = bookDao.findById(4);
+        System.out.println("---findById: " + spring);
 
         // ---- delete book ----
         bookDao.deleteById(4);

@@ -1,6 +1,7 @@
 package th.ku.bookstore;
 
 import java.util.List;
+import th.ku.bookstore.Book;
 
 public interface BookDao {
     void save(Book book);
